@@ -28,6 +28,8 @@ export const signInUser = async (req: Request, res: Response) => {
    const signInUser = await prisma.authModel.findUnique({
     where: {email}
    })
+
+   
     return res.status(201).json({
       message: "User signed-in successfully",
       data: signInUser,
